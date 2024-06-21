@@ -12,7 +12,13 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item CITRINE = registerItem("citrine",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings()),
+            ModItemGroup.CITRINE);
+
+    private static Item registerItem(String citrine, Item item, ItemGroup citrine1) {
+        return item;
+    }
+
     public static Item registerItem(String name, Item item, RegistryKey<ItemGroup>... itemGroups) {
         Item regItem = Registry.register(Registries.ITEM, new Identifier(LanRhymesCasualMod.MOD_ID, name), item);
         for (RegistryKey<ItemGroup> itemGroup : itemGroups) {
@@ -21,7 +27,7 @@ public class ModItems {
         return regItem;
     }
     public static  void registerModItems() {
-        LanRhymesCasualMod.LOGGER.debug("Registering mod items for" + LanRhymesCasualMod.MOD_ID);;
+        LanRhymesCasualMod.LOGGER.debug("Registering mod items for" + LanRhymesCasualMod.MOD_ID);
     }
 
     private static class FabricItemSettings extends Item.Settings {

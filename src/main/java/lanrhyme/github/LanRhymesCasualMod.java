@@ -1,5 +1,6 @@
 package lanrhyme.github;
 
+import lanrhyme.github.registry.ModItemGroup;
 import lanrhyme.github.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -20,6 +21,7 @@ public class LanRhymesCasualMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+		ModItemGroup.registerModItemGroup();
 		ModItems.registerModItems();
 	}
 }
